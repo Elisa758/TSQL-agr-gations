@@ -66,12 +66,7 @@ VALUES
 
 SELECT * FROM Achat;
 
-SELECT Categorie.nameCat, COUNT(Categorie.idCat) AS NombreAchat
-FROM Achat
-INNER JOIN Categorie ON Categorie.idCat=Achat.id_cat
-GROUP BY Categorie.nameCat;
-
-SELECT Categorie.nameCat, SUM(Produit.prix) AS SommeProduit
+SELECT Categorie.nameCat, COUNT(Categorie.idCat) AS NombreAchat, SUM(Produit.prix) AS SommeProduit
 FROM Achat
 INNER JOIN Categorie ON Categorie.idCat=Achat.id_cat
 INNER JOIN Produit ON Produit.idPro=Achat.id_produit
